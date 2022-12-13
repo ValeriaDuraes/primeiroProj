@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private rota: Router,
+    public toastController: ToastController,
+  ) {}
+
+  detalhesFilme(id){
+    console.log("passou "+id); 
+    this.rota.navigate(['/detalhes-filmes', {id:id}])
+  }
 }

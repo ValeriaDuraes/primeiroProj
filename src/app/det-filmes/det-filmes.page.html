@@ -1,49 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Detalhes
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content id="container">
-<ion-grid>
-<ion-row>
-  <br>
-  <h2>Filme Capitã Marvel</h2>
-</ion-row>
-
-  <ion-row>
-    <ion-col size-xs="12" size-md="6">
-      <ion-img src="assets/capita_marvel.jpg"></ion-img>
-    </ion-col>
-
-    <ion-col>
-      <ion-list>
-        <ion-item>Genero: Ação, Fantasia, Ficçao Científica</ion-item>
-        <ion-item>Direção: Anna Boden, Ryan Fleck</ion-item>
-        <ion-item>Roteiro: Nicole Perlman, Anna Boden</ion-item>
-        <ion-item>Elenco: Brie Larson, Samuel L. Jackson, Jude Law</ion-item>
-        <ion-item>Título original: Capitain Marvel</ion-item>
-      </ion-list>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size-md="12">
-      <ion-list-header>
-        <ion-label><b>Sinopse</b></ion-label>
-      </ion-list-header>
-
-      <ion-list>
-        <ion-item>Não recomendado para menores de 12 anos</ion-item>
-        <ion-item>
-          Em Capitã Marvel, Carol Danvers (Brie Larson) é uma ex-agente da Força Aérea norte-americana, que, sem se lembrar de sua vida na Terra, é recrutada pelos Kree para fazer parte de seu exército de elite. Inimiga declarada dos Skrull, ela acaba voltando ao seu planeta de origem para impedir uma invasão dos metaformos, e assim vai acabar descobrindo a verdade sobre si, com a ajuda do agente Nick Fury (Samuel L. Jackson) e da gata Goose.
-        </ion-item>
-      </ion-list>
-
-    </ion-col>
-  </ion-row>
-
-</ion-grid>
-</ion-content>
+<body>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>DETALHES</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img class="img_detalhes" src="{{this.img}}"></ion-img>
+          <div class="titulo">{{this.title}}</div>
+          <div class="sub_titulo">
+            <div class="duracao">Duração: {{this.duration}}</div>
+            <div class="genero">Genero: {{this.generate}}</div>
+          </div>        
+          <div class="descricao">Descrição: {{this.information}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</body>

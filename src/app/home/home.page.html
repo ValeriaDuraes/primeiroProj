@@ -8,101 +8,19 @@
 
 <ion-content class="ion-padding">
   <ion-grid>
-    <ion-row style="background-color: black">
-      <ion-col (click)="detFilmes(0)" size="12">
-        <ion-img src="assets/capita_marvel.jpg"></ion-img>
-      </ion-col>
-    </ion-row>
-
     <ion-row>
-      <br />
-      <h3>Continuar assistindo</h3>
-    </ion-row>
-
-    <ion-row style="background-color: black">
-      <ion-col (click)="detFilmes(1)" size="6" size-md="3">
-        <ion-img src="assets/film1.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(2)" size="6" size-md="3">
-        <ion-img src="assets/film2.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(3)" size="6" size-md="3">
-        <ion-img src="assets/film3.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(4)" size="6" size-md="3">
-        <ion-img src="assets/film4.jpg"></ion-img>
+      <ion-col (click)="carregarFilmes(destaque.id)" size="12">
+        <ion-img src="{{ destaque.photo_link }}"></ion-img>
       </ion-col>
     </ion-row>
-
     <ion-row>
-      <br />
-      <h3>Populares</h3>
-    </ion-row>
-
-    <ion-row style="background-color: black">
-      <ion-col (click)="detFilmes(5)" size="6" size-md="3">
-        <ion-img src="assets/film5.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(6)" size="6" size-md="3">
-        <ion-img src="assets/film6.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(7)" size="6" size-md="3">
-        <ion-img src="assets/film7.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(8)" size="6" size-md="3">
-        <ion-img src="assets/film8.jpg"></ion-img>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <br />
-      <h3>Sua lista</h3>
-    </ion-row>
-
-    <ion-row style="background-color: black">
-      <ion-col (click)="detFilmes(9)" size="6"size-md="3">
-        <ion-img src="assets/film9.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(10)" size="6" size-md="3">
-        <ion-img src="assets/film10.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(11)" size="6" size-md="3">
-        <ion-img src="assets/film11.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(12)" size="6" size-md="3">
-        <ion-img src="assets/film12.jpg"></ion-img>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <br />
-      <h3>Recomendados para você</h3>
-    </ion-row>
-
-    <ion-row style="background-color: black">
-      <ion-col (click)="detFilmes(13)" size="6" size-md="3">
-        <ion-img src="assets/film13.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(14)" size="6" size-md="3">
-        <ion-img src="assets/film14.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(15)" size="6" size-md="3">
-        <ion-img src="assets/film15.jpg"></ion-img>
-      </ion-col>
-
-      <ion-col (click)="detFilmes(16)" size="6" size-md="3">
-        <ion-img src="assets/film16.jpg"></ion-img>
+      <ion-col
+        *ngFor="let filme of filmes ; let i = index;"
+        (click)="carregarFilmes(filme.id)"
+        size-xs="6"
+        size-md="3"
+      >
+        <ion-img src="{{ filme.photo_link }}"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
