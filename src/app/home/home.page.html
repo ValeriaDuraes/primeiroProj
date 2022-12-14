@@ -9,14 +9,14 @@
 <ion-content class="ion-padding">
   <ion-grid>
     <ion-row>
-      <ion-col (click)="carregarFilmes(destaque.id)" size="12">
+      <ion-col (click)="detalhesFilme(destaque.id)" size="12">
         <ion-img src="{{ destaque.photo_link }}"></ion-img>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col
         *ngFor="let filme of filmes ; let i = index;"
-        (click)="carregarFilmes(filme.id)"
+        (click)="detalhesFilme(filme.id)"
         size-xs="6"
         size-md="3"
       >

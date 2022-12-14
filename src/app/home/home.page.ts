@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 import { FilmesService } from '../service/filmes.service';
 
 @Component({
@@ -7,34 +8,33 @@ import { FilmesService } from '../service/filmes.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
 export class HomePage {
-
-  filmes:any = [];
-  destaque:any = [];
+  filmes: any = [];
+  destaque: any = [];
 
   constructor(
     private rota: Router,
-    private filmesService: FilmesService) {}
-  
+    private filmesService: FilmesService,
+    private loadingCtrl: LoadingController
+  ) {}
 
-    ngOnInit(){
-      console.log('passou no home');
-      this.carregarFilmes();
-    }
-    async carregarFilmes(){
-      this.filmes  = await this.filmesService.getProductions();
-      console.log("filmes carregados", this.filmes)
-      const [firstKey] = Object.keys(this.filmes);
-      this.destaque = this.filmes[firstKey];
-      this.filmes.splice(firstKey, 1)
-      console.log('firstKey',firstKey)
-      console.log('destaque',this.destaque)
-      console.log('filmes',this.filmes)
-    }
-    
-  detalhesFilme(paramID){
-  console.log("passou"+paramID);
-  this.rota.navigate(['/detales-fil-principal', {id:paramID}])
- }
+  ngOnInit() {
+    console.log('passou no home');
+    this.carregarFilmes();
+  }
+  async carregarFilmes() {
+    this.filmes = await this.filmesService.getProductions();
+    console.log('filmes carregados', this.filmes);
+    const [firstKey] = Object.keys(this.filmes);
+    this.destaque = this.filmes[firstKey];
+    this.filmes.splice(firstKey, 1);
+    console.log('firstKey', firstKey);
+    console.log('destaque', this.destaque);
+    console.log('filmes', this.filmes);
+  }
+
+  detalhesFilme(paramID) {
+    console.log('passou' + paramID);
+    this.rota.navigate(['/det-filmes', { id: paramID }]);
+  }
 }
